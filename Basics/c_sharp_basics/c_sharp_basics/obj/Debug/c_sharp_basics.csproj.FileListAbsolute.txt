@@ -1,0 +1,7 @@
+C:\Projects\dotnet-projects\Basics\c_sharp_basics\c_sharp_basics\bin\Debug\c_sharp_basics.exe.config
+C:\Projects\dotnet-projects\Basics\c_sharp_basics\c_sharp_basics\bin\Debug\c_sharp_basics.exe
+C:\Projects\dotnet-projects\Basics\c_sharp_basics\c_sharp_basics\bin\Debug\c_sharp_basics.pdb
+C:\Projects\dotnet-projects\Basics\c_sharp_basics\c_sharp_basics\obj\Debug\c_sharp_basics.csprojAssemblyReference.cache
+C:\Projects\dotnet-projects\Basics\c_sharp_basics\c_sharp_basics\obj\Debug\c_sharp_basics.csproj.CoreCompileInputs.cache
+C:\Projects\dotnet-projects\Basics\c_sharp_basics\c_sharp_basics\obj\Debug\c_sharp_basics.exe
+C:\Projects\dotnet-projects\Basics\c_sharp_basics\c_sharp_basics\obj\Debug\c_sharp_basics.pdb
