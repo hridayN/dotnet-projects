@@ -1,0 +1,9 @@
+* By default access modifier for a class item/property is Private
+* If a member/property is declared static, the whole class shares the single copy of the member/property.
+* Static constructor is invoked only once, independent of the number of instances of the class.
+* Instance constructor is invoked with every instance of the class.
+* Static constructor is invoked before the instance constructor.
+* Static constructor comes into picture when we need to initialize static members of the class.
+* Access modifiers are not allowed for static constructors because whenever an static member of the class is invoked, the static constructor will be invoked automatically. Hence, we need not call static constructor explicitly.
+* Static members of the class can be accessed using ClassName where as instance members needs an object reference to be accessed.
+* Inside an Static member, 'this' can't be used for accessing any of the property/member/method of the class.
