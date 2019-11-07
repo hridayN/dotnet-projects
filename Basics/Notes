@@ -7,3 +7,21 @@
 * Access modifiers are not allowed for static constructors because whenever an static member of the class is invoked, the static constructor will be invoked automatically. Hence, we need not call static constructor explicitly.
 * Static members of the class can be accessed using ClassName where as instance members needs an object reference to be accessed.
 * Inside an Static member, 'this' can't be used for accessing any of the property/member/method of the class.
+
+OOPS
+* C sharp doesn't support multiple class inheritance, although, multi level inheritance is supported.
+* c sharp support multiple interface inheritance.
+* Whenever we create an instance of a Child/derived class, it automatically creates the instance of Parent/base class.
+
+POLYMORPHISM
+* It is possible to create a reference of ParentClasstype to ChildClasstype, as Child/Derived class fulfills all the requirements of Parent/base class.
+* It's not possible to create a reference of ChildClasstype to ParentClasstype as it might not be possible that Parent/Base class fulfills all the requirements of Child/Derived class.
+* Polymorphism allows us to override the methods/definition provided by the base/parent class by creating a reference of base/parent class to the object of derived/child class at runtime. By that reference we can  access the respective method defined/provided by the derived/child class.
+
+METHOD OVERRIDING
+* We declare the method in base/parent class as 'Virtual' and the method provided by derived/child class as 'override'.
+* When a method of base class is declared as 'virtual', it indicates all the derived classes, which are inheriting the base class that this method can be overridden.
+
+METHOD HIDING
+* We declare the method in base/parent class as 'Virtual' and the method provided by derived/child class as 'new'.
+* Creating a reference of base/parent class to the derived/child class will always point to the hidden method of base/parent class.
