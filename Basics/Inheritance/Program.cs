@@ -16,7 +16,7 @@ namespace Inheritance
             // ((EmployeeDetails_BaseClass)fte).PrintFullName();
 
             // Objective: To call parent/base class method.
-            // Way 1: Create a reference of parent type to Chil type.
+            // Way 1: Create a reference of parent type to Child type.
             EmployeeDetails_BaseClass empBase = new FullTimeEmployee_DerivedClass();
             empBase.PrintFullName();
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace c_sharp_basics
 {
-    class Program
+    class Basics
     {
         static void Main(string[] args)
         {
@@ -63,6 +63,9 @@ namespace c_sharp_basics
         }
         #endregion
 
+        #region Role of Properties
+
+        #endregion
     }
 
     class Customer
@@ -117,6 +120,51 @@ namespace c_sharp_basics
         public float GetArea()
         {
             return (Pi);
+        }
+    }
+
+    public class Student
+    {
+        private int Id;
+        private string Name;
+        private int PassingMarks;
+
+        public void SetId(int Id)
+        {
+            if (Id <= 0)
+            {
+                throw new Exception("StudentId can't be negative");
+            }else
+            {
+                this.Id = Id;
+            }
+        }
+
+        public int GetId()
+        {
+            return this.Id;
+        }
+
+        public void SetName(string Name)
+        {
+            if (!string.IsNullOrEmpty(Name))
+            {
+                this.Name = Name;
+            }else
+            {
+                throw new Exception("Name can't be negative");
+            }
+        }
+
+        public string GetName()
+        {
+            if (!string.IsNullOrEmpty(Name))
+            {
+                return this.Name;
+            } else
+            {
+                return "No Name!";
+            }
         }
     }
 }
