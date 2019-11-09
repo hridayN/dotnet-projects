@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.28307.757
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "c_sharp_basics", "c_sharp_basics\c_sharp_basics.csproj", "{D5F90A96-2260-47D5-BF20-9C6A4D47C8D3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inheritance", "..\Inheritance\Inheritance.csproj", "{45DAD04E-1F1B-4938-B83B-B59A7EFA97B5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Polymorphism", "..\Polymorphism\Polymorphism.csproj", "{92FFCF2F-7945-4BAA-AE1F-D973FCB13651}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{D5F90A96-2260-47D5-BF20-9C6A4D47C8D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D5F90A96-2260-47D5-BF20-9C6A4D47C8D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D5F90A96-2260-47D5-BF20-9C6A4D47C8D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45DAD04E-1F1B-4938-B83B-B59A7EFA97B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45DAD04E-1F1B-4938-B83B-B59A7EFA97B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45DAD04E-1F1B-4938-B83B-B59A7EFA97B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45DAD04E-1F1B-4938-B83B-B59A7EFA97B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92FFCF2F-7945-4BAA-AE1F-D973FCB13651}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92FFCF2F-7945-4BAA-AE1F-D973FCB13651}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92FFCF2F-7945-4BAA-AE1F-D973FCB13651}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92FFCF2F-7945-4BAA-AE1F-D973FCB13651}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

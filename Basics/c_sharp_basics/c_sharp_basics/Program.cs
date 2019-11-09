@@ -10,21 +10,59 @@ namespace c_sharp_basics
     {
         static void Main(string[] args)
         {
-            //Console.WriteLine("MAin method");
+            Console.WriteLine("Main method");
 
+            // ConstructorConcepts();
+
+            Add(1, 5);
+            Add(1, 5, 6);
+        }
+
+        #region Constructor Concepts
+        static void ConstructorConcepts()
+        {
             // If we have parameterized constructor, default constructor will not be called automatically
-            //Customer customer = new Customer();
-            //Console.Write("Names by default constructor: ");
-            //customer.PrintNames();
+            Customer customer = new Customer();
+            Console.Write("Names by default constructor: ");
+            customer.PrintNames();
 
-            //Customer paramCustomer = new Customer("Hridaya", "Nagaria");
-            //Console.Write("Names by parameterized constructor: ");
-            //paramCustomer.PrintNames();
+            Customer paramCustomer = new Customer("Hridaya", "Nagaria");
+            Console.Write("Names by parameterized constructor: ");
+            paramCustomer.PrintNames();
 
             Circle circle = new Circle(1);
             Console.WriteLine("Circle area: " + circle.GetArea());
             Console.ReadLine();
         }
+        #endregion
+
+        #region MethodOverloading based on number of arguments
+        static void Add(int n1, int n2)
+        {
+            Console.WriteLine("Sum: {0}", (n1 + n2));
+        }
+        static void Add(int n1, int n2, int n3)
+        {
+            Console.WriteLine("Sum: {0}", (n1 + n2 + n3));
+        }
+        #endregion
+
+        #region MethodOverloading based on type of arguments
+        static void Add(float n1, float n2)
+        {
+            Console.WriteLine("Sum: {0}", (n1 + n2));
+        }
+        static void Add(float n1, int n2)
+        {
+            Console.WriteLine("Sum: {0}", (n1 + n2));
+        }
+
+        static void Add(int n1, float n2)
+        {
+            Console.WriteLine("Sum: {0}", (n1 + n2));
+        }
+        #endregion
+
     }
 
     class Customer
@@ -68,7 +106,6 @@ namespace c_sharp_basics
         {
             Console.WriteLine("Static constructor invoked");
             Pi = 3.141f;
-            this.Radius = 5;
         }
 
         public Circle(int Radius)
