@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace c_sharp_basics
 {
-    class Basics
+    public class Basics
     {
         static void Main(string[] args)
         {
@@ -14,8 +14,13 @@ namespace c_sharp_basics
 
             // ConstructorConcepts();
 
-            Add(1, 5);
-            Add(1, 5, 6);
+            // Add(1, 5);
+            // Add(1, 5, 6);
+
+            // StructsImplementation();
+
+            ValueVsReference();
+            Console.ReadLine();
         }
 
         #region Constructor Concepts
@@ -64,14 +69,68 @@ namespace c_sharp_basics
         #endregion
 
         #region Role of Properties
+        // 1. We can use get()/set() method for getting/setting the properties
+        // 2. We can use auto implemented get/set for getting/setting the properties
+        #endregion
 
+        #region Structs
+        static void StructsImplementation()
+        {
+            CustomerDetails _cd = new CustomerDetails(1, "hriday");
+            _cd.PrintCustomerDetails();
+
+            CustomerDetails _cd1 = new CustomerDetails();
+            _cd1.PrintCustomerDetails();
+
+            CustomerDetails _cd2 = new CustomerDetails();
+            _cd2.Id = 3;
+            _cd2.Name = "hn";
+            _cd2.PrintCustomerDetails();
+
+            _cd.PrintCustomerDetails();
+        }
+        #endregion
+
+        #region Value type vs Reference type
+        public static void ValueVsReference()
+        {
+            // Value type change
+            // int i = 0;
+            // int j = 0;
+            // i = 10;
+            // j = i;
+            // Console.WriteLine("i: {0}, j: {1}", i, j);
+            // j = j + 1;
+            // Console.WriteLine("i: {0}, j: {1}", i, j);
+
+            // Value type changes in struct
+            // CustomerDetails _cd1 = new CustomerDetails();
+            // _cd1.Id = 1;
+            // _cd1.Name = "hriday";
+            // Console.WriteLine("_cd1 details: Id: {0}, Name: {1}", _cd1.Id, _cd1.Name);
+            // 
+            // CustomerDetails _cd2 = _cd1;
+            // Console.WriteLine("_cd2 details: Id: {0}, Name: {1}", _cd2.Id, _cd2.Name);
+            // _cd2.Id = 5;
+            // _cd2.Name = "h";
+            // 
+            // Console.WriteLine("_cd2 details: Id: {0}, Name: {1}", _cd2.Id, _cd2.Name);
+            // 
+            // Console.WriteLine("_cd1 details: Id: {0}, Name: {1}", _cd1.Id, _cd1.Name);
+
+            // Reference type changes in class
+            Customer _c1 = new Customer("first","last");
+            Customer _c2 = _c1; 
+            _c2.FirstName = "last";
+            _c1.PrintNames();
+        }
         #endregion
     }
 
     class Customer
     {
-        string FirstName;
-        string LastName;
+        public string FirstName;
+        public string LastName;
 
         // Default parameter-less constructor
         public Customer() : this("NA", "NA")
@@ -134,7 +193,8 @@ namespace c_sharp_basics
             if (Id <= 0)
             {
                 throw new Exception("StudentId can't be negative");
-            }else
+            }
+            else
             {
                 this.Id = Id;
             }
@@ -150,7 +210,8 @@ namespace c_sharp_basics
             if (!string.IsNullOrEmpty(Name))
             {
                 this.Name = Name;
-            }else
+            }
+            else
             {
                 throw new Exception("Name can't be negative");
             }
@@ -161,10 +222,30 @@ namespace c_sharp_basics
             if (!string.IsNullOrEmpty(Name))
             {
                 return this.Name;
-            } else
+            }
+            else
             {
                 return "No Name!";
             }
+        }
+    }
+
+    public struct CustomerDetails
+    {
+        private int _id;
+        private string _name;
+        public string Name { get { return this._name; } set { this._name = value; } }
+        public int Id { get { return this._id; } set { this._id = value; } }
+
+        public CustomerDetails(int id, string name)
+        {
+            this._id = id;
+            this._name = name;
+        }
+
+        public void PrintCustomerDetails()
+        {
+            Console.WriteLine("Id: {0}, Name: {1}", this._id, this._name);
         }
     }
 }

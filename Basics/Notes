@@ -25,3 +25,16 @@ METHOD OVERRIDING
 METHOD HIDING
 * We declare the method in base/parent class as 'Virtual' and the method provided by derived/child class as 'new'.
 * Creating a reference of base/parent class to the derived/child class will always point to the hidden method of base/parent class.
+
+REFACTORING
+
+STRUCTS VS CLASSES
+* Structs are value type, classes are reference type
+* Objects reference variables are stored in stack where as objects are stored in Heap.
+* Class can have destructor, where as structs can't have.
+* Structs can't have explicit parameterless constructor, where as a class can have one.
+
+VALUE TYPE vs REFERENCE TYPE
+* Value types hold the value where they are declared, Reference type hold a reference to an object in memory.
+* For value types, they are destroyed as soon as their scope is finished, where as reference types destroys the   reference variable to object after the scope is finished. The object is later destroyed.
+* 
