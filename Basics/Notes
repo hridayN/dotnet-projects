@@ -37,4 +37,14 @@ STRUCTS VS CLASSES
 VALUE TYPE vs REFERENCE TYPE
 * Value types hold the value where they are declared, Reference type hold a reference to an object in memory.
 * For value types, they are destroyed as soon as their scope is finished, where as reference types destroys the   reference variable to object after the scope is finished. The object is later destroyed.
-* 
+
+INTERFACE
+* An interface can have only declaration. No implementations/definitions of the methods.
+* Instance of an interface can't be created. 
+* A reference variable of an interface can point to an object of derived class.
+* The members of an interface are public by default. There can't be any explicit access modifier for a member.
+* An interface can't contain a property.
+* A class implements an interface, thereby providing the declarations for the interface methods.
+* Signature of the method defined in interface should match with that of declared in class implementing the interface.
+* Multiple interfaces can be iherited by a class.
+* If a class inherits an interface which is already inheriting another interface then the class mmust provide implementations for all the methods of all the interfaces.
