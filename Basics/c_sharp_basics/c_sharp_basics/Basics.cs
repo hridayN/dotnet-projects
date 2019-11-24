@@ -19,7 +19,9 @@ namespace c_sharp_basics
 
             // StructsImplementation();
 
-            ValueVsReference();
+            // ValueVsReference();
+
+            MultipleTypesInArray();
             Console.ReadLine();
         }
 
@@ -125,12 +127,31 @@ namespace c_sharp_basics
             _c1.PrintNames();
         }
         #endregion
+
+        #region Multiple types in an object array
+        public static void MultipleTypesInArray()
+        {
+            Customer c = new Customer();
+            c.FirstName = "hriday";
+            c.LastName = "nagaria";
+
+            object[] arr = new object[3];
+            arr[0] = 1;
+            arr[1] = "name";
+            arr[2] = c;
+
+            foreach(object obj in arr)
+            {
+                Console.WriteLine(obj);
+            }
+        }
+        #endregion
     }
 
     class Customer
     {
-        public string FirstName;
-        public string LastName;
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
 
         // Default parameter-less constructor
         public Customer() : this("NA", "NA")
@@ -156,6 +177,11 @@ namespace c_sharp_basics
                 Console.WriteLine("FullName: " + "NA");
             }
 
+        }
+
+        public override string ToString()
+        {
+            return this.FirstName + ", " + this.LastName;
         }
     }
 

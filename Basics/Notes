@@ -48,3 +48,6 @@ INTERFACE
 * Signature of the method defined in interface should match with that of declared in class implementing the interface.
 * Multiple interfaces can be iherited by a class.
 * If a class inherits an interface which is already inheriting another interface then the class mmust provide implementations for all the methods of all the interfaces.
+
+* Arrays are strongly typed. We can only store a particular type in an array.
+* An object array can store multiple types.
