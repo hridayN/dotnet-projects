@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Owin.Security.DataHandler.Encoder;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,7 +22,9 @@ namespace c_sharp_basics
 
             // ValueVsReference();
 
-            MultipleTypesInArray();
+            // MultipleTypesInArray();
+
+            GetByteArray("ezMHImz4eNhVnWbO0GtNZkRHUkk7qlSlzKAUfobuUyg=");
             Console.ReadLine();
         }
 
@@ -146,6 +149,17 @@ namespace c_sharp_basics
             }
         }
         #endregion
+
+        #region Byte concepts
+        public static void GetByteArray(string text)
+        {
+            byte[] byteArray;
+            ByteArray ba = new ByteArray();
+            byteArray = ba.GetByteArray(text);
+            Console.Write("Byte array: ", byteArray);
+        }
+        #endregion
+
     }
 
     class Customer
@@ -274,4 +288,13 @@ namespace c_sharp_basics
             Console.WriteLine("Id: {0}, Name: {1}", this._id, this._name);
         }
     }
+
+    public class ByteArray
+    {
+        public byte[] GetByteArray(string text)
+        {
+            return TextEncodings.Base64Url.Decode(text);
+        }
+    }
+
 }

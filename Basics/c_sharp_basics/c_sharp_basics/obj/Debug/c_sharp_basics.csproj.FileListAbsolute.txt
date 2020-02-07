@@ -5,3 +5,7 @@ C:\Projects\dotnet-projects\Basics\c_sharp_basics\c_sharp_basics\obj\Debug\c_sha
 C:\Projects\dotnet-projects\Basics\c_sharp_basics\c_sharp_basics\obj\Debug\c_sharp_basics.csproj.CoreCompileInputs.cache
 C:\Projects\dotnet-projects\Basics\c_sharp_basics\c_sharp_basics\obj\Debug\c_sharp_basics.exe
 C:\Projects\dotnet-projects\Basics\c_sharp_basics\c_sharp_basics\obj\Debug\c_sharp_basics.pdb
+C:\projects\dotnet-projects\Basics\c_sharp_basics\c_sharp_basics\bin\Debug\Microsoft.Owin.dll
+C:\projects\dotnet-projects\Basics\c_sharp_basics\c_sharp_basics\bin\Debug\Microsoft.Owin.Security.dll
+C:\projects\dotnet-projects\Basics\c_sharp_basics\c_sharp_basics\bin\Debug\Owin.dll
+C:\projects\dotnet-projects\Basics\c_sharp_basics\c_sharp_basics\obj\Debug\c_sharp_basics.csproj.CopyComplete
