@@ -1,0 +1,6 @@
+C:\Projects\dotnet-projects\EmployeesAPI\EmployeeCrud\bin\Debug\EmployeeCrud.dll
+C:\Projects\dotnet-projects\EmployeesAPI\EmployeeCrud\bin\Debug\EmployeeCrud.pdb
+C:\Projects\dotnet-projects\EmployeesAPI\EmployeeCrud\obj\Debug\EmployeeCrud.csprojAssemblyReference.cache
+C:\Projects\dotnet-projects\EmployeesAPI\EmployeeCrud\obj\Debug\EmployeeCrud.csproj.CoreCompileInputs.cache
+C:\Projects\dotnet-projects\EmployeesAPI\EmployeeCrud\obj\Debug\EmployeeCrud.dll
+C:\Projects\dotnet-projects\EmployeesAPI\EmployeeCrud\obj\Debug\EmployeeCrud.pdb
