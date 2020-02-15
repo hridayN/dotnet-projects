@@ -49,5 +49,15 @@ INTERFACE
 * Multiple interfaces can be iherited by a class.
 * If a class inherits an interface which is already inheriting another interface then the class mmust provide implementations for all the methods of all the interfaces.
 
+<<<<<<< HEAD
 * Arrays are strongly typed. We can only store a particular type in an array.
 * An object array can store multiple types.
+=======
+REGEX
+* \  - represents metacharacter
+* \d - represents digits from 0-9
+* .  - match any single character (letter, digit, whitespace, everything)
+* [string] - to match a particular string
+* [^starting char]pattern - to match a particular string, starting with starting char and with the length of (starting char + pattern) length  
+* 
+>>>>>>> master

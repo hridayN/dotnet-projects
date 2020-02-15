@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Owin.Security.DataHandler.Encoder;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,6 +22,7 @@ namespace c_sharp_basics
 
             // ValueVsReference();
 
+<<<<<<< HEAD
             //GuidBasics guidBasics = new GuidBasics();
             //guidBasics.PrintGuid();
 
@@ -29,6 +31,11 @@ namespace c_sharp_basics
             BasicFundamentals basic = new BasicFundamentals();
             basic.Name = "Hriday";
             Console.WriteLine("Name is: " + basic.Name);
+=======
+            // MultipleTypesInArray();
+
+            GetByteArray("ezMHImz4eNhVnWbO0GtNZkRHUkk7qlSlzKAUfobuUyg=");
+>>>>>>> f27aa8c7c8950bb970cd148ea546a365fed94cdc
             Console.ReadLine();
         }
 
@@ -153,6 +160,17 @@ namespace c_sharp_basics
             }
         }
         #endregion
+
+        #region Byte concepts
+        public static void GetByteArray(string text)
+        {
+            byte[] byteArray;
+            ByteArray ba = new ByteArray();
+            byteArray = ba.GetByteArray(text);
+            Console.Write("Byte array: ", byteArray);
+        }
+        #endregion
+
     }
 
     class Customer
@@ -282,6 +300,7 @@ namespace c_sharp_basics
         }
     }
 
+<<<<<<< HEAD
     public class GuidBasics
     {
         private Guid guid;
@@ -311,4 +330,14 @@ namespace c_sharp_basics
             set { name = value; }
         }
     }
+=======
+    public class ByteArray
+    {
+        public byte[] GetByteArray(string text)
+        {
+            return TextEncodings.Base64Url.Decode(text);
+        }
+    }
+
+>>>>>>> f27aa8c7c8950bb970cd148ea546a365fed94cdc
 }
