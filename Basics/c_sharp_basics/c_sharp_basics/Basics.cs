@@ -22,9 +22,20 @@ namespace c_sharp_basics
 
             // ValueVsReference();
 
+<<<<<<< HEAD
+            //GuidBasics guidBasics = new GuidBasics();
+            //guidBasics.PrintGuid();
+
+            // MultipleTypesInArray();
+
+            BasicFundamentals basic = new BasicFundamentals();
+            basic.Name = "Hriday";
+            Console.WriteLine("Name is: " + basic.Name);
+=======
             // MultipleTypesInArray();
 
             GetByteArray("ezMHImz4eNhVnWbO0GtNZkRHUkk7qlSlzKAUfobuUyg=");
+>>>>>>> f27aa8c7c8950bb970cd148ea546a365fed94cdc
             Console.ReadLine();
         }
 
@@ -124,8 +135,8 @@ namespace c_sharp_basics
             // Console.WriteLine("_cd1 details: Id: {0}, Name: {1}", _cd1.Id, _cd1.Name);
 
             // Reference type changes in class
-            Customer _c1 = new Customer("first","last");
-            Customer _c2 = _c1; 
+            Customer _c1 = new Customer("first", "last");
+            Customer _c2 = _c1;
             _c2.FirstName = "last";
             _c1.PrintNames();
         }
@@ -143,7 +154,7 @@ namespace c_sharp_basics
             arr[1] = "name";
             arr[2] = c;
 
-            foreach(object obj in arr)
+            foreach (object obj in arr)
             {
                 Console.WriteLine(obj);
             }
@@ -289,6 +300,37 @@ namespace c_sharp_basics
         }
     }
 
+<<<<<<< HEAD
+    public class GuidBasics
+    {
+        private Guid guid;
+
+        public void PrintGuid()
+        {
+            // guid = Guid.NewGuid();
+            Console.WriteLine("guid: ", Guid.NewGuid());
+
+            // guid = new Guid();
+            Console.WriteLine("guid: ", new Guid());
+        }
+    }
+
+    public class BasicFundamentals
+    {
+        private string name = nameof(Name);
+
+        public string SetName()
+        {
+            name = Name;
+            return name;
+        }
+        public string Name
+        {
+            get { return name; }
+            set { name = value; }
+        }
+    }
+=======
     public class ByteArray
     {
         public byte[] GetByteArray(string text)
@@ -297,4 +339,5 @@ namespace c_sharp_basics
         }
     }
 
+>>>>>>> f27aa8c7c8950bb970cd148ea546a365fed94cdc
 }
