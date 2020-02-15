@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Owin.Security.DataHandler.Encoder;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,7 +20,22 @@ namespace c_sharp_basics
 
             // StructsImplementation();
 
-            ValueVsReference();
+            // ValueVsReference();
+
+<<<<<<< HEAD
+            //GuidBasics guidBasics = new GuidBasics();
+            //guidBasics.PrintGuid();
+
+            // MultipleTypesInArray();
+
+            BasicFundamentals basic = new BasicFundamentals();
+            basic.Name = "Hriday";
+            Console.WriteLine("Name is: " + basic.Name);
+=======
+            // MultipleTypesInArray();
+
+            GetByteArray("ezMHImz4eNhVnWbO0GtNZkRHUkk7qlSlzKAUfobuUyg=");
+>>>>>>> f27aa8c7c8950bb970cd148ea546a365fed94cdc
             Console.ReadLine();
         }
 
@@ -119,18 +135,48 @@ namespace c_sharp_basics
             // Console.WriteLine("_cd1 details: Id: {0}, Name: {1}", _cd1.Id, _cd1.Name);
 
             // Reference type changes in class
-            Customer _c1 = new Customer("first","last");
-            Customer _c2 = _c1; 
+            Customer _c1 = new Customer("first", "last");
+            Customer _c2 = _c1;
             _c2.FirstName = "last";
             _c1.PrintNames();
         }
         #endregion
+
+        #region Multiple types in an object array
+        public static void MultipleTypesInArray()
+        {
+            Customer c = new Customer();
+            c.FirstName = "hriday";
+            c.LastName = "nagaria";
+
+            object[] arr = new object[3];
+            arr[0] = 1;
+            arr[1] = "name";
+            arr[2] = c;
+
+            foreach (object obj in arr)
+            {
+                Console.WriteLine(obj);
+            }
+        }
+        #endregion
+
+        #region Byte concepts
+        public static void GetByteArray(string text)
+        {
+            byte[] byteArray;
+            ByteArray ba = new ByteArray();
+            byteArray = ba.GetByteArray(text);
+            Console.Write("Byte array: ", byteArray);
+        }
+        #endregion
+
     }
 
     class Customer
     {
-        public string FirstName;
-        public string LastName;
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
 
         // Default parameter-less constructor
         public Customer() : this("NA", "NA")
@@ -156,6 +202,11 @@ namespace c_sharp_basics
                 Console.WriteLine("FullName: " + "NA");
             }
 
+        }
+
+        public override string ToString()
+        {
+            return this.FirstName + ", " + this.LastName;
         }
     }
 
@@ -248,4 +299,45 @@ namespace c_sharp_basics
             Console.WriteLine("Id: {0}, Name: {1}", this._id, this._name);
         }
     }
+
+<<<<<<< HEAD
+    public class GuidBasics
+    {
+        private Guid guid;
+
+        public void PrintGuid()
+        {
+            // guid = Guid.NewGuid();
+            Console.WriteLine("guid: ", Guid.NewGuid());
+
+            // guid = new Guid();
+            Console.WriteLine("guid: ", new Guid());
+        }
+    }
+
+    public class BasicFundamentals
+    {
+        private string name = nameof(Name);
+
+        public string SetName()
+        {
+            name = Name;
+            return name;
+        }
+        public string Name
+        {
+            get { return name; }
+            set { name = value; }
+        }
+    }
+=======
+    public class ByteArray
+    {
+        public byte[] GetByteArray(string text)
+        {
+            return TextEncodings.Base64Url.Decode(text);
+        }
+    }
+
+>>>>>>> f27aa8c7c8950bb970cd148ea546a365fed94cdc
 }
