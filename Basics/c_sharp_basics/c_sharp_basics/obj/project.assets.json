@@ -161,7 +161,7 @@
       ]
     },
     "Microsoft.Owin.Security/4.1.0": {
-      "sha512": "7sIQcgVknrtW/i7VAJmxda5tT6m/9ZjgDhqdOM+gQg6WjQqSwr3kxiE8JlyxddipkT7O+i3GJbCE9Gp54J7/FA==",
+      "sha512": "pzwy7buaZX5faHVK9Ig8O9w178y3eOha8BcZ/zViK8W2nR3SLyfDmo5Cgv5YmP1JR9hsMakwzffaQQncmOjgBA==",
       "type": "package",
       "path": "microsoft.owin.security/4.1.0",
       "files": [
@@ -193,7 +193,8 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\1710\\.nuget\\packages\\": {}
+    "C:\\Users\\hriday\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
@@ -201,13 +202,17 @@
       "projectUniqueName": "C:\\projects\\dotnet-projects\\Basics\\c_sharp_basics\\c_sharp_basics\\c_sharp_basics.csproj",
       "projectName": "c_sharp_basics",
       "projectPath": "C:\\projects\\dotnet-projects\\Basics\\c_sharp_basics\\c_sharp_basics\\c_sharp_basics.csproj",
-      "packagesPath": "C:\\Users\\1710\\.nuget\\packages\\",
+      "packagesPath": "C:\\Users\\hriday\\.nuget\\packages\\",
       "outputPath": "C:\\projects\\dotnet-projects\\Basics\\c_sharp_basics\\c_sharp_basics\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
+      "fallbackFolders": [
+        "C:\\Microsoft\\Xamarin\\NuGet\\"
+      ],
       "configFilePaths": [
-        "C:\\Users\\1710\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\hriday\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net461"
