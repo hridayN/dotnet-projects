@@ -1,3 +1,4 @@
+using ExpenseManagerAPI.Database;
 using ExpenseManagerAPI.Interface;
 using ExpenseManagerAPI.Services;
 using ExpenseManagerAPI.Settings;
@@ -16,8 +17,9 @@ builder.Services.AddControllers().AddJsonOptions(options =>
 builder.Services.AddSwaggerGen();
 
 // Add services to the container.
-builder.Services.AddSingleton<DBConfigurations>();
+builder.Services.AddScoped<DBHelper>();
 builder.Services.AddScoped<IPaymentMethod, PaymentMethodManager>();
+builder.Services.AddScoped<IDBService, DBService>();
 
 var app = builder.Build();
 

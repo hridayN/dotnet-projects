@@ -1,11 +1,20 @@
-﻿namespace ExpenseManagerAPI.Database
+﻿using System.Data.SqlClient;
+
+namespace ExpenseManagerAPI.Settings
 {
-    public class DbHelper
+    public sealed class DBHelper
     {
-        public enum QueryCommandType
+        private IConfiguration _configuration;
+        private readonly string _connectionString;
+        public DBHelper(IConfiguration configuration)
         {
-            Text,
-            StoredProcedure
+            this._configuration = configuration;
+            this._connectionString = configuration.GetValue<string>("Database:ConnectionString");
+        }
+
+        public SqlConnection GetSqlConnection()
+        {
+            return new SqlConnection(this._connectionString);
         }
     }
 }

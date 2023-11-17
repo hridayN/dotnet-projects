@@ -1,6 +1,5 @@
 ﻿using ExpenseManagerAPI.Interface;
 using ExpenseManagerAPI.Models;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ExpenseManagerAPI.Controllers
