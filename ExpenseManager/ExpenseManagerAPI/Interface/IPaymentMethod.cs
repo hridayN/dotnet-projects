@@ -6,6 +6,6 @@ namespace ExpenseManagerAPI.Interface
     {
         SavePaymentMethodResponse AddPaymentMethod(SavePaymentMethodRequest savePaymentMethodRequest);
 
-        // List<PaymentMethod> GetPaymentMethods();
+        GetPaymentMethodResponse GetPaymentMethods();
     }
 }

@@ -12,7 +12,7 @@ namespace ExpenseManagerAPI.Database
             this._dbHelper = dbHelper;
         }
 
-        public int ExecuteNonQueryStoredProcedure(string sqlQuery, List<IDbDataParameter> sqlParams)
+        public void ExecuteNonQueryStoredProcedure(string sqlQuery, List<IDbDataParameter> sqlParams)
         {
             using (SqlConnection sqlConnection = this._dbHelper.GetSqlConnection())
             {
@@ -27,7 +27,22 @@ namespace ExpenseManagerAPI.Database
                 sqlCommand.ExecuteNonQuery();
                 sqlConnection.Close();
             }
-            return 0;
+        }
+
+        public DataSet LoadDataSetWithoutParams(string sqlQuery)
+        {
+            DataSet dataSet = new DataSet();
+            using (SqlConnection sqlConnection = this._dbHelper.GetSqlConnection())
+            {
+                SqlCommand sqlCommand = new SqlCommand(sqlQuery, sqlConnection);
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+
+                sqlConnection.Open();
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(sqlQuery, this._dbHelper.GetSqlConnection());
+                dataAdapter.Fill(dataSet);
+                sqlConnection.Close();
+            }
+            return dataSet;
         }
         /*
 private Dictionary<string, DateTime> processList = new Dictionary<string, DateTime>();

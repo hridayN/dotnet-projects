@@ -4,7 +4,9 @@ namespace ExpenseManagerAPI.Database
 {
     public interface IDBService
     {
-        int ExecuteNonQueryStoredProcedure(string sqlQuery, List<IDbDataParameter> sqlParams);
+        void ExecuteNonQueryStoredProcedure(string sqlQuery, List<IDbDataParameter> sqlParams);
+
+        DataSet LoadDataSetWithoutParams(string sqlQuery);
         /*
         void OpenConnection();
 

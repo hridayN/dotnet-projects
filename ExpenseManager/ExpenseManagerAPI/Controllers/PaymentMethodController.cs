@@ -21,5 +21,11 @@ namespace ExpenseManagerAPI.Controllers
             return _paymentMethod.AddPaymentMethod(savePaymentMethodRequest);
         }
 
+        [Route("GetPaymentMethods")]
+        [HttpGet]
+        public GetPaymentMethodResponse GetPaymentMethods()
+        {
+            return _paymentMethod.GetPaymentMethods();
+        }
     }
 }

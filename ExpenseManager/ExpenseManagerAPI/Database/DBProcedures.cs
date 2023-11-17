@@ -2,6 +2,7 @@
 {
     public class DBProcedures
     {
-        public const string SP_AddPaymentMethod = "dbo.AddPaymentMethod";
+        public const string SP_AddUpdatePaymentMethod = "[dbo].[AddUpdatePaymentMethod]";
+        public const string SP_GetAllPaymentMethods = "[dbo].[GetPaymentMethods]";
     }
 }
