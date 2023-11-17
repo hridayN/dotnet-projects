@@ -15,6 +15,7 @@ namespace ExpenseManagerAPI.Controllers
             _paymentMethod = paymentMethod;
         }
 
+        [Route("AddPaymentMethod")]
         [HttpPost]
         public SavePaymentMethodResponse SavePaymentMethod(SavePaymentMethodRequest savePaymentMethodRequest)
         {
