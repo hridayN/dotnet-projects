@@ -31,11 +31,14 @@ namespace ExpenseManagerAPI.Services
             return savePaymentMethodResponse;
         }
 
-        public GetPaymentMethodResponse GetPaymentMethods()
+        public GetPaymentMethodResponse GetPaymentMethods(GetPaymentMethodRequest getPaymentMethodRequest)
         {
             GetPaymentMethodResponse getPaymentMethodResponse = new GetPaymentMethodResponse();
-           
-            DataSet dataSet = this._dbService.LoadDataSetWithoutParams(DBProcedures.SP_GetAllPaymentMethods);
+            List<IDbDataParameter> parameters = new List<IDbDataParameter>()
+            {
+                new SqlParameter() { ParameterName = "@ActiveIndicator", Value = getPaymentMethodRequest.ActiveIndicator }
+            };
+            DataSet dataSet = this._dbService.LoadDataSet(DBProcedures.SP_GetAllPaymentMethods, parameters);
             if (dataSet.Tables[0].Rows.Count > 0)
             {
                 List<PaymentMethod> paymentMethods = new List<PaymentMethod>();
@@ -46,7 +49,7 @@ namespace ExpenseManagerAPI.Services
                         Name = (string)dataRow["Name"],
                         BillingDate = Convert.ToInt32(dataRow["BillingDate"]),
                         GracePeriod = Convert.ToInt32(dataRow["GradePeriodDays"]),
-                        ActiveIndicator = (dataRow["ActiveIndicator"] == DBNull.Value) ? false : (bool)dataRow["ActiveIndicator"],
+                        ActiveIndicator = (dataRow["ActiveIndicator"] == DBNull.Value) ? false : (bool)dataRow["ActiveIndicator"]
                     };
                     paymentMethods.Add(paymentMethod);
                 }

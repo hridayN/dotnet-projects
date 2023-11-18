@@ -6,7 +6,7 @@ namespace ExpenseManagerAPI.Database
     {
         void ExecuteNonQueryStoredProcedure(string sqlQuery, List<IDbDataParameter> sqlParams);
 
-        DataSet LoadDataSetWithoutParams(string sqlQuery);
+        DataSet LoadDataSet(string sqlQuery, List<IDbDataParameter> sqlParams);
         /*
         void OpenConnection();
 

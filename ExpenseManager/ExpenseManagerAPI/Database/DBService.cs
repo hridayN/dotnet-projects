@@ -29,16 +29,19 @@ namespace ExpenseManagerAPI.Database
             }
         }
 
-        public DataSet LoadDataSetWithoutParams(string sqlQuery)
+        public DataSet LoadDataSet(string sqlQuery, List<IDbDataParameter> sqlParams)
         {
             DataSet dataSet = new DataSet();
             using (SqlConnection sqlConnection = this._dbHelper.GetSqlConnection())
             {
                 SqlCommand sqlCommand = new SqlCommand(sqlQuery, sqlConnection);
                 sqlCommand.CommandType = CommandType.StoredProcedure;
-
+                foreach (IDbDataParameter param in sqlParams)
+                {
+                    sqlCommand.Parameters.Add(param);
+                }
                 sqlConnection.Open();
-                SqlDataAdapter dataAdapter = new SqlDataAdapter(sqlQuery, this._dbHelper.GetSqlConnection());
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(sqlCommand);
                 dataAdapter.Fill(dataSet);
                 sqlConnection.Close();
             }

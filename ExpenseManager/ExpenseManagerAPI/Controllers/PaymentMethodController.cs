@@ -22,10 +22,10 @@ namespace ExpenseManagerAPI.Controllers
         }
 
         [Route("GetPaymentMethods")]
-        [HttpGet]
-        public GetPaymentMethodResponse GetPaymentMethods()
+        [HttpPost]
+        public GetPaymentMethodResponse GetPaymentMethods(GetPaymentMethodRequest getPaymentMethodRequest)
         {
-            return _paymentMethod.GetPaymentMethods();
+            return _paymentMethod.GetPaymentMethods(getPaymentMethodRequest);
         }
     }
 }
