@@ -19,6 +19,7 @@ builder.Services.AddSwaggerGen();
 // Add services to the container.
 builder.Services.AddScoped<DBHelper>();
 builder.Services.AddScoped<IPaymentMethod, PaymentMethodManager>();
+builder.Services.AddScoped<IExpenseManager, ExpenseManager>();
 builder.Services.AddScoped<IDBService, DBService>();
 
 var app = builder.Build();

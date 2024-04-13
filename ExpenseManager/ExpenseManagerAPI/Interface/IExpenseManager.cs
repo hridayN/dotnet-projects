@@ -4,8 +4,8 @@ namespace ExpenseManagerAPI.Interface
 {
     public interface IExpenseManager
     {
-        SaveExpenseResponse AddExpense(SaveExpenseRequest saveExpenseRequest);
+        public SaveExpenseResponse AddExpense(SaveExpenseRequest saveExpenseRequest);
 
-        GetExpenseResponse GetExpenses(GetExpenseRequest getExpenseRequest);
+        public GetExpenseResponse GetExpenses(GetExpenseRequest getExpenseRequest);
     }
 }
