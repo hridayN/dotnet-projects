@@ -23,7 +23,29 @@ builder.Services.AddScoped<IExpenseManager, ExpenseManager>();
 builder.Services.AddScoped<IDBService, DBService>();
 
 var app = builder.Build();
+app.Use(async (context, next) =>
+{
+    context.Request.Path = "/index.html";
+    await next();
+    /*
+    await next();
+    if (context.Response.StatusCode == 404 && !System.IO.Path.HasExtension(context.Request.Path.Value))
+    {
+        context.Request.Path = "/index.html";
+        await next();
+    }
+    */
+});
 
+app.UseDefaultFiles();
+
+app.UseStaticFiles();
+
+app.UseCors(builder =>
+builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
+
+
+/*
 // Configure the HTTP request pipeline.
 app.UseSwagger();
 app.UseSwaggerUI(options =>
@@ -32,7 +54,8 @@ app.UseSwaggerUI(options =>
     // To serve the Swagger UI at the app's root (https://localhost:<port>/), set the RoutePrefix property to an empty string
     options.RoutePrefix = string.Empty;
 });
-    ;
+;
+*/
 app.UseAuthorization();
 
 app.MapControllers();
