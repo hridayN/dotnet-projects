@@ -64,5 +64,10 @@ Console.WriteLine("Missing number: " + arrayProblems.FindMissingNumber(arr, arr.
 int[] arr = { 1, 1, 0, 1, 1, 1, 0, 1, 1 };
 Console.WriteLine("Max 1s: " + arrayProblems.FindMaximumConsecutiveOnes(arr));
 */ //
+/*
 int[] arr = { 1, 1, 2, 2, 3, 4, 4 };
 Console.WriteLine("Element with only 1 occurrence(s): " + arrayProblems.FindElementWith1Occurrence(arr));
+*/
+int[] arr = {1, 2, 3, 1, 1, 3, 3};
+int requiredSum = 6;
+Console.WriteLine("Longest subarray with sum: " + requiredSum + " is: " + arrayProblems.FindLengthofLongestSubArrayWtihSumK(arr, requiredSum));
