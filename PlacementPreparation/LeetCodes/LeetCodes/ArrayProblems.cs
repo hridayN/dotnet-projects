@@ -432,6 +432,45 @@ namespace LeetCodes
             }
             return arrXOR;
         }
+    
+        public int FindLengthofLongestSubArrayWtihSumK(int[] arr, int k)
+        {
+            int n = arr.Length, maxLength = 0, sum = 0, pointer1 = 0, pointer2 = 0;
+           
+            while (pointer2 < n)
+            {
+                sum += arr[pointer2];
+                maxLength = SetMaxLength(sum, k, pointer1, pointer2, maxLength);
+                while (sum > k && pointer1 <= pointer2)
+                {
+                    sum -= arr[pointer1];
+                    pointer1++;
+                    maxLength = SetMaxLength(sum, k, pointer1, pointer2, maxLength);
+                }
+                pointer2++;
+            }
+            return maxLength;
+        }
+
+        private int SetMaxLength(int sum, int k, int pointer1, int pointer2, int maxLength)
+        {
+            return (sum == k && (pointer2 - pointer1 + 1) > maxLength) ? pointer2 - pointer1 + 1 : maxLength;
+        }
+
+        public bool IsTwoSumExistsInSortedArray(int[] arr, int target)
+        {
+            int n = arr.Length, left = 0, right = n - 1;
+            while (left < right)
+            {
+                int sum = arr[left] + arr[right];
+                if (sum == target)
+                    return true;
+                else if (sum < target)
+                    left++;
+                else
+                    right--;
+            }
+            return false;
+        }
     }
 }
-
