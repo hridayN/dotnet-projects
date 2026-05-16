@@ -73,7 +73,19 @@ int[] arr = {1, 2, 3, 1, 1, 3, 3};
 int requiredSum = 6;
 Console.WriteLine("Longest subarray with sum: " + requiredSum + " is: " + arrayProblems.FindLengthofLongestSubArrayWtihSumK(arr, requiredSum));
 */
+/*
 int[] arr = {1, 2, 3, 5, 6, 8, 11};
 int requiredSum = 15;
 Console.WriteLine("Sum: " + requiredSum + " exists for 2 elements: " + arrayProblems.IsTwoSumExistsInSortedArray(arr, requiredSum));
-
+*/
+/*
+int[] arr = {5, 7, 5, 5, 7, 1, 5, 5, 7, 7, 1, 1, 1, 2};
+Console.WriteLine("Majority element: " + arrayProblems.GetMajorityElement(arr));
+*/
+/*
+int[] arr = {-2, -3, 4, -1, -2, -3, 5, -3};
+Console.WriteLine("Max sum of the subarray: " + arrayProblems.GetMaxmimumSumOfSubArray(arr));
+*/
+int[] arr = {2, 0, 1, 1, 0, 2, 1, 2, 1, 0, 1};
+arrayProblems.SortArryaOf012s(arr);
+Utility.PrintArray(arr);

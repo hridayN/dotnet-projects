@@ -472,5 +472,86 @@ namespace LeetCodes
             }
             return false;
         }
+
+        public int GetMajorityElement(int[] arr)
+        {
+            int n = arr.Length, majorityElement = 0, count = 0;
+            for (int i =0; i < n; i++)
+            {
+                // If count is 0, then we can set majority element to current element and count to 1.
+                // If current element is same as majority element, then we can increase count by 1.
+                // If current element is different from majority element, then we can decrease count by 1.
+                if (count == 0)
+                {
+                    majorityElement = arr[i];
+                    count = 1;
+                }
+                else if (arr[i] == majorityElement)
+                {
+                    count++;
+                }
+                else
+                {
+                    count--;
+                }
+            }
+            count = 0;
+            for (int i = 0; i < n; i++)
+            {
+                count = (arr[i] == majorityElement) ? count+1 : count;
+            }
+            // If count of majority element is greater than n/2, then we can return majority element, otherwise we can return -1.
+            if (count > (n / 2))
+            {
+                return majorityElement;
+            }
+            return -1; // Return -1 if no majority element exists
+        }
+
+        public int GetMaxmimumSumOfSubArray(int[] arr)
+        {
+            int n = arr.Length, maxSum = arr[0], currentSum = 0;
+            for (int i = 0; i < n; i++)
+            {
+                // Make current sum 0 if it is less than 0, otherwise add current element to current sum and
+                // check if it is greater than max sum or not.
+                currentSum += arr[i];
+                currentSum = (currentSum < 0) ? 0 : currentSum;
+                maxSum = (currentSum > maxSum) ? currentSum : maxSum;
+            }
+            return maxSum;
+        }
+    
+        public void SortArryaOf012s(int[] arr)
+        {
+            int n = arr.Length, low = 0, mid = 0, high = n - 1;
+            while (mid <= high)
+            {
+                if (arr[mid] == 0)
+                {
+                    // swap arr[low] and arr[mid]
+                    SwapInArray(arr, low, mid);
+                    low++;
+                    mid++;
+                }
+                else if (arr[mid] == 1)
+                {
+                    mid++;
+                }
+                else
+                {
+                    // swap arr[mid] and arr[high]
+                    SwapInArray(arr, mid, high);
+                    high--;
+                }
+            }
+        }
+
+        private void SwapInArray(int[] arr, int i, int j)
+        {
+            int temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
+        }
     }
 }
