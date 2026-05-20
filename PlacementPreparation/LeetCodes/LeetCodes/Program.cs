@@ -95,7 +95,11 @@ Utility.PrintArray(arr);
 int[] arr = {-3, 1, -2, 5, 2, -4};
 Utility.PrintArray(arrayProblems.ReArrageElementsBySign(arr));
 */
-
+/*
 int[] arr = {2, 1, 5, 4, 3, 0, 0};
 Console.WriteLine("Next permutation: ");
 Utility.PrintArray(arrayProblems.FindNextPermutation(arr));
+*/
+int[] arr = {10, 22, 12, 3, 0, 6};
+Console.WriteLine("Leaders: ");
+Utility.PrintArray(arrayProblems.FindLeaders(arr));

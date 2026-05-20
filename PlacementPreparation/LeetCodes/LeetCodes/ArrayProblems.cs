@@ -602,5 +602,20 @@ namespace LeetCodes
             return arr;
         }
     
+        public int[] FindLeaders(int[] arr)
+        {
+            List<int> leaders = new List<int>();
+            int n = arr.Length, maxFromRight = arr[n - 1];
+            leaders.Add(maxFromRight);
+            for (int i = n-1; i >= 0; i--)
+            {
+                if (arr[i] > maxFromRight)
+                {
+                    leaders.Add(arr[i]);
+                    maxFromRight = arr[i];
+                }
+            }
+            return leaders.ToArray();
+        }
     }
 }
