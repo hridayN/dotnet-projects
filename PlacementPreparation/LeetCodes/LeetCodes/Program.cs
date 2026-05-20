@@ -86,6 +86,16 @@ Console.WriteLine("Majority element: " + arrayProblems.GetMajorityElement(arr));
 int[] arr = {-2, -3, 4, -1, -2, -3, 5, -3};
 Console.WriteLine("Max sum of the subarray: " + arrayProblems.GetMaxmimumSumOfSubArray(arr));
 */
+/*
 int[] arr = {2, 0, 1, 1, 0, 2, 1, 2, 1, 0, 1};
 arrayProblems.SortArryaOf012s(arr);
 Utility.PrintArray(arr);
+*/
+/*
+int[] arr = {-3, 1, -2, 5, 2, -4};
+Utility.PrintArray(arrayProblems.ReArrageElementsBySign(arr));
+*/
+
+int[] arr = {2, 1, 5, 4, 3, 0, 0};
+Console.WriteLine("Next permutation: ");
+Utility.PrintArray(arrayProblems.FindNextPermutation(arr));

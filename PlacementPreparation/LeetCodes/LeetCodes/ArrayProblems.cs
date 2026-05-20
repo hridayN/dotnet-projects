@@ -553,5 +553,54 @@ namespace LeetCodes
             arr[i] = arr[j];
             arr[j] = temp;
         }
+    
+        public int[] ReArrageElementsBySign(int[] arr)
+        {
+            int n = arr.Length, positiveIndex = 0, negativeIndex = 1;
+            int[] result = new int[n];
+            for (int i =0; i < n; i++)
+            {
+                if (arr[i] < 0)
+                {
+                    result[negativeIndex] = arr[i];
+                    negativeIndex += 2;
+                }
+                else
+                {
+                    result[positiveIndex] = arr[i];
+                    positiveIndex += 2;
+                }
+            }
+            return result;
+        }
+    
+        public int[] FindNextPermutation(int[] arr)
+        {
+            int n = arr.Length, x = -1;
+            // 1. Starting from last, find the element which is smaller than its next element in the array
+            for (int i = n - 2; i >= 0; i--)
+            {
+                if (arr[i] < arr[i + 1])
+                {
+                    x = i;
+                    break;
+                }
+            }
+
+            // 2. In the remaining array, from last till x, find the element which is greater than arr[x] & we swap both.
+            for (int i = n-1; i > x; i--)
+            {
+                if (arr[i] > arr[x])
+                {
+                    SwapInArray(arr, i, x);
+                    break;
+                }
+            }
+
+            // 3. Reverse the remaining array from x+1 to end of the array.
+            ReverseArray(arr, x + 1, n - 1);
+            return arr;
+        }
+    
     }
 }
